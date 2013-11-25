@@ -1,3 +1,5 @@
+#
+
 require 'rubygems'
 require 'eventmachine'
 require 'date'
@@ -5,7 +7,7 @@ require 'date'
 require 'rainbow'
 require 'color'
 
-class UDPHandler < EM::Connection
+class Server < EM::Connection
   def receive_data(command)
     command.chomp!
 
@@ -16,18 +18,10 @@ class UDPHandler < EM::Connection
     # Turn second byte
     color = input[1].to_f / 255.0 * 360.0
 
-    log color
-
     # Rotate 90 degrees and flip to match dial ui on device
-    color = Color::HSL.new( color - 90, 90, 50).to_rgb
+    hue = color - 90
 
-    # Get each channel and prepare for loggers output
-    red   = color.r * 255
-    green = color.g * 255
-    blue  = color.b * 255
-
-    # Log the color and the hex of the color
-    log "████████ ".color(red, green, blue) + color.html
+    log_color(hue)
 
   end
 
@@ -36,8 +30,22 @@ class UDPHandler < EM::Connection
   def log(message)
     puts "#{DateTime.now.to_s} : #{message}"
   end
+
+  def log_color(hue)
+    #
+    color = Color::HSL.new( hue, 90, 50).to_rgb
+
+    # Get each channel and prepare for loggers output
+    red   = color.r * 255
+    green = color.g * 255
+    blue  = color.b * 255
+
+    # Log the color and the hex of the color
+    log "████████ ".color(red, green, blue) + color.html
+  end
+
 end
 
 EM.run do
-  EM.open_datagram_socket('0.0.0.0', 8899, UDPHandler)
+  EM.open_datagram_socket('0.0.0.0', 8899, Server)
 end
