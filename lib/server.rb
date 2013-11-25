@@ -11,13 +11,15 @@ class UDPHandler < EM::Connection
 
     # FIXME This is being interpereted as a string of chars instead of three bytes
     # input = command.bytes
-    input = [64, 0, 85]
+    input = [64, Integer(command), 85]
 
     # Turn second byte
     color = input[1].to_f / 255.0 * 360.0
 
-    # FIXME rotate 90 degrees and flip to match dial ui on device
-    color = Color::HSL.new( color.to_i, 90, 50).to_rgb
+    log color
+
+    # Rotate 90 degrees and flip to match dial ui on device
+    color = Color::HSL.new( color - 90, 90, 50).to_rgb
 
     # Get each channel and prepare for loggers output
     red   = color.r * 255
