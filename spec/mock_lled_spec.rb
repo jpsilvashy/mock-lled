@@ -25,9 +25,137 @@
 # SET COLOR TO WHITE (GROUP 4)    0x4B    100ms followed by:  0xCB
 
 require 'spec_helper'
+require 'em-rspec'
 
 describe Server do
 
+  let(:params) { {} }
+
+  subject { Server.new(params) }
+
+  describe 'em-rspec' do
+    it 'executes specs within a reactor loop' do
+      EM.reactor_running?.should be_true # This is true
+    end
+  end
+
+  # Turn all off
+  describe '#rgbw_color_led_all_off' do
+    it 'RGBW COLOR LED ALL OFF' do
+      subject.should_receive(:receive_data).with("\x41\x00\x55")
+
+    end
+  end
+
+  # Turn all on
+  describe '#rgbw_color_led_all_on' do
+    it 'RGBW COLOR LED ALL ON' do
+      subject.should_receive(:receive_data).with("\x42\x00\x55")
+
+    end
+  end
+
+
+  # Disco effect
+  describe '#disco_mode' do
+    it 'DISCO MODE' do
+      return false
+    end
+  end
+
+  describe '#disco_speed_slower' do
+    it 'DISCO SPEED SLOWER' do
+      return false
+    end
+  end
+
+  describe '#disco_speed_faster' do
+    it 'DISCO SPEED FASTER' do
+      return false
+    end
+  end
+
+
+  # Toggle groups on/off
+  describe '#group_1_all_on' do
+    it 'GROUP 1 ALL ON' do
+      return false
+    end
+  end
+
+  describe '#group_1_all_off' do
+    it 'GROUP 1 ALL OFF' do
+      return false
+    end
+  end
+
+  describe '#group_2_all_on' do
+    it 'GROUP 2 ALL ON' do
+      return false
+    end
+  end
+
+  describe '#group_2_all_off' do
+    it 'GROUP 2 ALL OFF' do
+      return false
+    end
+  end
+
+  describe '#group_3_all_on' do
+    it 'GROUP 3 ALL ON' do
+      return false
+    end
+  end
+
+  describe '#group_3_all_off' do
+    it 'GROUP_3_ALL_OFF' do
+      return false
+    end
+  end
+
+  describe '#group_4_all_on' do
+    it 'GROUP 4 ALL ON' do
+      return false
+    end
+  end
+
+  describe '#group_4_all_off' do
+    it 'GROUP 4 ALL OFF' do
+      return false
+    end
+  end
+
+
+  # Set groups to white
+  describe '#set_color_to_white_group_all' do
+    it 'SET COLOR TO WHITE (GROUP ALL)' do
+      return false
+    end
+  end
+
+  describe '#set_color_to_white_group_1' do
+    it 'SET COLOR TO WHITE (GROUP 1)' do
+      return false
+    end
+  end
+
+  describe '#set_color_to_white_group_2' do
+    it 'SET COLOR TO WHITE (GROUP 2)' do
+      return false
+    end
+  end
+
+  describe '#set_color_to_white_group_3' do
+    it 'SET COLOR TO WHITE (GROUP 3)' do
+      return false
+    end
+  end
+
+  describe '#set_color_to_white_group_4' do
+    it 'SET COLOR TO WHITE (GROUP 4)' do
+      return false
+    end
+  end
 
 end
 
