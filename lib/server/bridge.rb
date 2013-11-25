@@ -1,7 +1,5 @@
-require 'rubygems'
 require 'eventmachine'
 require 'date'
-
 require 'rainbow'
 require 'color'
 
