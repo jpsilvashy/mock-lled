@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'eventmachine'
+require File.expand_path(File.join(File.dirname(__FILE__), '../lib/limitless_led'))
+
+puts ">> Starting Limitless LED Server running on port: 8899"
+
+EM.run do
+  EM.open_datagram_socket('0.0.0.0', 8899, LimitlessLed::Server)
+end

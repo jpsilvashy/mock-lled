@@ -3,20 +3,17 @@ mock limitless-led
 
 This is a ruby UDP server that mocks the [LimitlessLED Bridge](http://www.limitlessled.com/), this is intended to show the output color for the LimitlessLED without needing the hardware to test it on.
 
-This is in very early development
+This is in very early development, and not of the functionality of the LED is mocked out
 
 ## Usage
 
 Start the server:
 
-    $ ruby ./lib/server.rb
+    $ bin/server
 
-In another console you can connect to the server and send commands over UDP:
+In a seperate console window run the demo to see the mock server output the colors the light would change to:
 
-    $ nc -u 0.0.0.0 8899
-    \x40\xff\x55
-    \x40\x00\x55
-    \x40\xa2\x55
+    $ ruby examples/demo.rb
 
 ## Note
 

@@ -27,11 +27,11 @@
 require 'spec_helper'
 require 'em-rspec'
 
-describe Server do
+describe LimitlessLed do
 
   let(:params) { {} }
 
-  subject { Server.new(params) }
+  subject { LimitlessLed::Bridge.new(params) }
 
   describe 'em-rspec' do
     it 'executes specs within a reactor loop' do
