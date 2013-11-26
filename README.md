@@ -1,5 +1,5 @@
-mock limitless-led
-==================
+Mock Limitless LED Bridge
+=========================
 
 This is a ruby UDP server that mocks the [LimitlessLED Bridge](http://www.limitlessled.com/), this is intended to show the output color for the LimitlessLED without needing the hardware to test it on.
 
