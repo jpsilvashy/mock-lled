@@ -1,6 +1,8 @@
 Mock Limitless LED Bridge
 =========================
 
+[![Build Status](https://travis-ci.org/jpsilvashy/mock-lled.png?branch=master)](https://travis-ci.org/jpsilvashy/mock-lled)
+
 This is a ruby UDP server that mocks the [LimitlessLED Bridge](http://www.limitlessled.com/), this is intended to show the output color for the LimitlessLED without needing the hardware to test it on.
 
 This is in very early development, and not of the functionality of the LED is mocked out
@@ -14,7 +16,7 @@ Start the server:
 In a seperate console window run the demo to see the mock server output the colors the light would change to:
 
     $ ruby examples/demo.rb
-    
+
 You should see all the available colors scroll by, like this:
 
 ![](https://www.evernote.com/shard/s5/sh/8a0f9424-b8b8-448c-9fbb-946d91744d5b/6b88fa7df4d3c190e02c6a7a43bcb9d0/deep/0/example.jpg)
