@@ -14,6 +14,10 @@ Start the server:
 In a seperate console window run the demo to see the mock server output the colors the light would change to:
 
     $ ruby examples/demo.rb
+    
+You should see all the available colors scroll by, like this:
+
+![](https://www.evernote.com/shard/s5/sh/8a0f9424-b8b8-448c-9fbb-946d91744d5b/6b88fa7df4d3c190e02c6a7a43bcb9d0/deep/0/example.jpg)
 
 ## Note
 
