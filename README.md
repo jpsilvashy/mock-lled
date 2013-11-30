@@ -1,6 +1,12 @@
 Mock Limitless LED Bridge
 =========================
 
+#### This repository has moved
+
+I moved this repo to [jpsilvashy/limitless-led](https://github.com/jpsilvashy/limitless-led). This was because the project extended outside of just mocking the server on the LimitlessLED bridge to a more dedicated library for both controlling and testing the LimitlessLED.
+
+----
+
 [![Build Status](https://travis-ci.org/jpsilvashy/mock-lled.png?branch=master)](https://travis-ci.org/jpsilvashy/mock-lled)
 
 This is a ruby UDP server that mocks the [LimitlessLED Bridge](http://www.limitlessled.com/), this is intended to show the output color for the LimitlessLED without needing the hardware to test it on.
